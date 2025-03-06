@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-export const Regi = () => {
+function Regi(){
     const [data, setData] = useState([]);
     useEffect(() => {
         axios.get("http://localhost:3001/regi")
@@ -13,18 +13,18 @@ export const Regi = () => {
         })
     }, []);
     return(
-        <>
+        
         <table>
         <thead>
-            <th scope="col ">Előzetes névsor:</th>
+            <th>Előzetes névsor:</th>
             <tr>
-                <th scope="col ">Tanuló neve</th>
-                <th scope="col ">Ágazat</th>
-                <th scope="col ">Összes pontszám</th>
+                <th>Tanuló neve</th>
+                <th>Ágazat</th>
+                <th>Összes pontszám</th>
             </tr>
         </thead>
         <tbody>
-            {data.map((row) =>{
+            {data.map(row =>{
                 <tr>
                     <td>{row.nev}</td>
                     <td>{row.agazat}</td>
@@ -33,6 +33,8 @@ export const Regi = () => {
             })}
         </tbody>
         </table>
-        </>
+        
     )
 }
+
+export default Regi

@@ -4,7 +4,8 @@ import {Container} from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Regi} from './tables/Regi'
+import Regi from './tables/Regi.jsx'
+import { Valasztott } from './tables/Valasztott';
 
 export const Home = () =>{
     return(
@@ -53,7 +54,6 @@ export const Home = () =>{
                 <div>
                     <h3>A felvételt nyert tanulók névsora a nyelvi előkészítőre</h3>
                     <div>
-
                     </div>
                 </div>
                 <div>

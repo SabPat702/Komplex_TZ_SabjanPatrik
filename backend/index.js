@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 });
 
 app.get("/regi", (req, res) => {
-    const query = "Select diakok.nev, tagozatok.agazat, diakok.hozott+diakok.kpmagy+diakok.kpmat as 'osszpontszam' from diakok inner join jelentkezesek on jelentkezesek.diak = diakok.oktazon inner join tagozatok on tagozatok.akod=jelentkezesek.tag Order by diakok.nev Asc";
+    const query = "Select diakok.nev as 'nev', tagozatok.agazat as 'agazat', diakok.hozott+diakok.kpmagy+diakok.kpmat as 'osszpontszam' from diakok inner join jelentkezesek on jelentkezesek.diak = diakok.oktazon inner join tagozatok on tagozatok.akod=jelentkezesek.tag Order by diakok.nev Asc";
     db.query(query, (err, result) => {
         if(err) return(res.json(err))
         return(res.json(result))
